@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_user', function (Blueprint $table) {
+        Schema::create('order_status', function (Blueprint $table) {
             $table->id();
-            $table->integer('users_id')->nullable();
-            $table->longText('photo')->nullable();
-            $table->string('role')->nullable();
-            $table->string('contact_number')->nullable();
-            $table->longText('biography')->nullable();
+            $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_user');
+        Schema::dropIfExists('order_status');
     }
 };

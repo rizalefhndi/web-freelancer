@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_user', function (Blueprint $table) {
+        Schema::create('service', function (Blueprint $table) {
             $table->id();
             $table->integer('users_id')->nullable();
-            $table->longText('photo')->nullable();
-            $table->string('role')->nullable();
-            $table->string('contact_number')->nullable();
-            $table->longText('biography')->nullable();
+            $table->string('title');
+            $table->longText('description')->nullable();
+            $table->integer('delivery_time')->nullable();
+            $table->integer('revision_limit')->nullable();
+            $table->string('price')->nullable();
+            $table->longText('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_user');
+        Schema::dropIfExists('service');
     }
 };
