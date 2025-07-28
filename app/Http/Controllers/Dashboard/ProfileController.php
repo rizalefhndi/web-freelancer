@@ -62,4 +62,11 @@ class ProfileController extends Controller
     {
         //
     }
+
+    //
+
+    public function delete()
+    {
+        // Logic to delete the photo
+    }
 }
