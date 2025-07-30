@@ -66,7 +66,7 @@ class LandingController extends Controller
     // custom
 
     public function explore(){
-        // Logic for explore page
+        return view('pages.landing.explorer');
     }
     public function detail($id){
         // Logic for explore page
