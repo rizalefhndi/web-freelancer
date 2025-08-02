@@ -22,24 +22,44 @@
                         Full Name
                     </label>
                     <input name="name" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="name" type="text" placeholder="Your name" required>
+                    @if ($errors->has('name'))
+                        <span class="text-red-500 text-sm mb-3">
+                            {{ $errors->first('name') }}
+                        </span>
+                    @endif
                 </div>
                 <div class="mb-4">
                     <label class="block text-grey-darker text-sm mb-2" for="email">
                         Email
                     </label>
                     <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="email" placeholder="name@domain.com" required>
+                    @if ($errors->has('email'))
+                        <span class="text-red-500 text-sm mb-3">
+                            {{ $errors->first('email') }}
+                        </span>
+                    @endif
                 </div>
                 <div>
                     <label class="block text-grey-darker text-sm mb-2" for="password">
                         Password
                     </label>
                     <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="At least 8 characters" required>
+                    @if ($errors->has('password'))
+                        <span class="text-red-500 text-sm mb-3">
+                            {{ $errors->first('password') }}
+                        </span>
+                    @endif
                 </div>
                 <div>
                     <label class="block text-grey-darker text-sm mb-2" for="password_confirmation">
                         Password Confirmation
                     </label>
                     <input name="password_confirmation" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password_confirmation" type="password" placeholder="At least 8 characters" required>
+                    @if ($errors->has('password_confirmation'))
+                        <span class="text-red-500 text-sm mb-3">
+                            {{ $errors->first('password_confirmation') }}
+                        </span>
+                    @endif
                 </div>
                 <div class="flex items-center justify-between">
                     <div class="inline-block text-xs text-gray-400">

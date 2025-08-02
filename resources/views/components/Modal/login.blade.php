@@ -25,12 +25,24 @@
                             Email
                         </label>
                         <input name="email" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="name@domain.com" required autofocus>
+
+                        @if ($errors->has('email'))
+                            <span class="text-red-500 text-sm mb-3">
+                                {{ $errors->first('email') }}
+                            </span>
+                        @endif
                     </div>
                     <div>
                         <label class="block text-grey-darker text-sm mb-2" for="password">
                             Password
                         </label>
                         <input name="password" class="appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="At least 8 characters" required autocomplete="current-password">
+
+                        @if ($errors->has('password'))
+                            <span class="text-red-500 text-sm mb-3">
+                                {{ $errors->first('password') }}
+                            </span>
+                        @endif
                     </div>
                     <div class="flex items-center justify-between">
                         <div class="inline-block text-xs text-gray-400">
