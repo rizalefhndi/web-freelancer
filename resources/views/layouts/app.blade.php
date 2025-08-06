@@ -12,9 +12,6 @@
 
         @stack('after-style')
 
-        @include('includes.dashboard.script')
-
-        @stack('script')
     </head>
     <body>
         <div class="antialiased">
@@ -40,7 +37,6 @@
         @stack('before-script')
 
         @include('includes.dashboard.script')
-
 
         @stack('after-script')
     </body>
