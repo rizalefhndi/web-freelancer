@@ -8,13 +8,11 @@
 
         @stack('before-style')
 
-             @include('includes.dashboard.style')
+        @include('includes.dashboard.style')
 
         @stack('after-style')
 
         @include('includes.dashboard.script')
-
-        @livewireScripts
 
         @stack('script')
     </head>
@@ -41,7 +39,7 @@
 
         @stack('before-script')
 
-            @include('includes.dashboard.script')
+        @include('includes.dashboard.script')
 
 
         @stack('after-script')
