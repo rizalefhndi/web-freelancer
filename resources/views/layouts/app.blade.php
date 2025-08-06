@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="antialiased">
-            <div class="flex h-screen bg-serv-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }"></div>
+            <div class="flex h-screen bg-serv-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }">
 
             @include('components.dashboard.dekstop')
 
