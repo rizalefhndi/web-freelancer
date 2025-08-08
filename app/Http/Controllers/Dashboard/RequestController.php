@@ -37,7 +37,7 @@ class RequestController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('pages.dashboard.request.detail');
     }
 
     /**
