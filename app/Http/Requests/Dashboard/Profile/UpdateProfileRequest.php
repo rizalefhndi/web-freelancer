@@ -2,7 +2,12 @@
 
 namespace App\Http\Requests\Dashboard\Profile;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Validation\Rule;
+
+use Auth;
 
 class UpdateProfileRequest extends FormRequest
 {
@@ -11,7 +16,7 @@ class UpdateProfileRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +27,13 @@ class UpdateProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'required', 'string', 'max:255'
+            ],
+            'email' => [
+                'required', 'string', 'max:255', 'email', Rule::unique('users')->where('id', '<>', Auth::user()->id),
+
+            ]
         ];
     }
 }

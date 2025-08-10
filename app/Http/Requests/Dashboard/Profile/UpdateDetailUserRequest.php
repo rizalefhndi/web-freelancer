@@ -2,7 +2,12 @@
 
 namespace App\Http\Requests\Dashboard\Profile;
 
+use App\Models\DetailUser;
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Validation\Rule;
+
+use Auth;
 
 class UpdateDetailUserRequest extends FormRequest
 {
@@ -11,7 +16,7 @@ class UpdateDetailUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +27,18 @@ class UpdateDetailUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'photo' => [
+                'nullable', 'file', 'max:1024'
+            ],
+            'role' => [
+                'nullable', 'string', 'max:100'
+            ],
+            'contact_number' => [
+                'nullable', 'regex:/^\+?[0-9\s\-()]+$/', 'max:12'
+            ],
+            'biography' => [
+                'nullable', 'string', 'max:5000'
+            ],
         ];
     }
 }
