@@ -77,7 +77,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProfileRequest $request_pofile, UpdateDetailUserRequest $request_detail_user)
+    public function update(UpdateProfileRequest $request_profile, UpdateDetailUserRequest $request_detail_user)
     {
 
         $data_profile = $request_profile->all();
