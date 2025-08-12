@@ -105,6 +105,31 @@ class ProfileController extends Controller
         $detail_user = DetailUser::find($user->detail_user->id);
         $detail_user->update($data_detail_user);
 
+        $experience_user_id = ExperienceUser::where('detail_user_id', $detail_user['id'])->first();
+        if (isset($experience_user_id)) {
+            foreach ($data_profile['experience'] as $key => $value) {
+                $experience_user = ExperienceUser::find($key);
+                $experience_user->detail_user_id = $detail_user['id'];
+                $experience_user->experience = $value;
+                $experience_user->save();
+            }
+
+        } else {
+            foreach ($data_profile['experience'] as $key => $value) {
+                if (isset($value)) {
+                    $experience_user = new ExperienceUser();
+                    $experience_user->detail_user_id = $detail_user['id'];
+                    $experience_user->experience = $value;
+                    $experience_user->save();
+
+                }
+            }
+        }
+
+        toast()->success('Update has been success');
+
+        return back();
+
     }
 
     /**
@@ -120,5 +145,25 @@ class ProfileController extends Controller
     public function delete()
     {
         // Logic to delete the photo
+        $get_user_photo = DetailUser::where('users_id', Auth::user()->id)->first();
+        $path_photo = $get_user_photo['photo'];
+
+        // Second update value to null
+        $data = DetailUser::find($get_user_photo['id']);
+        $data->photo = null;
+        $data->save();
+
+        // Delete the photo from storage
+        $data = 'storage/' . $path_photo;
+        if (File::exists($data)) {
+            File::delete($data);
+        } else {
+            File::delete('storage/app/public' . $path_photo);
+        }
+
+        toast()->success('Delete photo has been success');
+
+        return back();
+
     }
 }
