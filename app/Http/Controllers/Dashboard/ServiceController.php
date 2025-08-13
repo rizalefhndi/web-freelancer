@@ -53,9 +53,55 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreServiceRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['users_id'] = Auth::user()->id;
+
+        // Add to service
+        $service = Service::create($data);
+
+        // Add to advantage service
+        foreach ($data['advantage-service'] as $key => $value) {
+            $advantage_service = new AdvantageService();
+            $advantage_service->service_id = $service->id;
+            $advantage_service->advantage_id = $value;
+            $advantage_service->save();
+        }
+
+        // Add to advantage user
+        foreach ($data['advantage-user'] as $key => $value) {
+            $advantage_user = new AdvantageUser();
+            $advantage_user->service_id = $service->id;
+            $advantage_user->advantage_id = $value;
+            $advantage_user->save();
+        }
+
+        // Add to thumbnail service
+        if ($request->hasFile('thumbnail')) {
+            foreach ($request->file('thumbnail') as $file) {
+                $path = $file->store(
+                    'assets/service/thumbnail' . 'public',
+                );
+
+                $thumbnail_service = new ThumbnailService();
+                $thumbnail_service->service_id = $service['id'];
+                $thumbnail_service->thumbnail = $path;
+                $thumbnail_service->save();
+            }
+        }
+
+        // Add to tagline
+        foreach ($data['tagline'] as $key => $value) {
+            $tagline = new Tagline();
+            $tagline->service_id = $service->id;
+            $tagline->tagline = $value;
+            $tagline->save();
+        }
+
+        toast()->success('Save has been success');
+
+        return redirect()->route('member.service.index');
     }
 
     /**
