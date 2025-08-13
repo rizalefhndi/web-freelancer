@@ -109,23 +109,125 @@ class ServiceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return abort(404);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Service $service)
     {
-        return view('pages.dashboard.service.edit');
+        $advantage_services = AdvantageService::where('service_id', $service->['id'])->get();
+        $taglines = Tagline::where('service_id', $service->['id'])->get();
+        $advantage_users = AdvantageUser::where('service_id', $service->['id'])->get();
+        $thumbnail_services = ThumbnailService::where('service_id', $service->['id'])->get();
+
+        return view('pages.dashboard.service.edit', compact('service', 'advantage_services', 'taglines', 'advantage_users', 'thumbnail_services'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateServiceRequest $request, Service $service)
     {
-        //
+        $data = $request->all();
+
+        // Update service
+        $service->update($data);
+
+        // Update advantage service
+        foreach ($data['advantage-service'] as $key => $value) {
+            $advantage_service = AdvantageService::find($key);
+            $advantage_service->advantage = $value;
+            $advantage_service->save();
+        }
+
+        // Add new advantage service
+        if(isset($data['advantage_service'])) {
+            foreach ($data['advantage-service'] as $key => $value) {
+                $advantage_service = AdvantageService::find($key);
+                $advantage_service->service_id = $service->['id'];
+                $advantage_service->advantage_id = $value;
+                $advantage_service->save();
+            }
+        }
+
+        // Update advantage user
+        foreach ($data['advantage-user'] as $key => $value) {
+            $advantage_user = AdvantageUser::find($key);
+            $advantage_user->advantage = $value;
+            $advantage_user->save();
+        }
+
+        // Add new advantage user
+        if(isset($data['advantage_user'])) {
+            foreach ($data['advantage-user'] as $key => $value) {
+                $advantage_user = AdvantageUser::find($key);
+                $advantage_user->service_id = $service->['id'];
+                $advantage_user->advantage = $value;
+                $advantage_user->save();
+            }
+        }
+
+          // Update advantage tagline
+        foreach ($data['tagline'] as $key => $value) {
+            $tagline = Tagline::find($key);
+            $tagline->tagline = $value;
+            $tagline->save();
+        }
+
+        // Add new advantage tagline
+        if(isset($data['tagline'])) {
+            foreach ($data['tagline'] as $key => $value) {
+                $tagline = Tagline::find($key);
+                $tagline->service_id = $service->['id'];
+                $tagline->tagline = $value;
+                $tagline->save();
+            }
+        }
+
+        // Update thumbnail service
+        if ($request->hasFile('thumbnails')) {
+            foreach ($request->file('thumbnails') as $key => $value)
+                {
+                    $get_photo = ThumbnailService::where('id', $key)->first();
+
+                    $path = $file->store(
+                        'assets/service/thumbnail' . 'public',
+                    );
+
+                    $thumbnail_service = ThumbnailService::find($key);
+                    $thumbnail_service->thumbnail = $path;
+                    $thumbnail_service->save();
+
+                    $data = 'storage/'.$get_photo['photo'];
+                    if(File::exists($data)) {
+                        File::delete($data);
+                    } else {
+                        File::delete('storage/app/public/'.$get_photo['photo']);
+                    }
+            }
+        }
+
+        // Add new thumbnail service
+        if ($request->hasFile('thumbnail')) {
+            foreach ($request->file('thumbnail') as $file)
+                {
+                    $path = $file->store(
+                        'assets/service/thumbnail' . 'public',
+                    );
+
+                    $thumbnail_service = new ThumbnailService();
+                    $thumbnail_service->service_id = $service['id'];
+                    $thumbnail_service->thumbnail = $path;
+                    $thumbnail_service->save();
+                }
+        }
+
+        toast()->success('Update has been success');
+
+        return redirect()->route('member.service.index');
+
     }
 
     /**
@@ -133,6 +235,6 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return abort(404);
     }
 }
