@@ -14,6 +14,7 @@ use App\Models\Tagline;
 use App\Models\AdvantageUser;
 use App\Models\AdvantageService;
 use App\Models\ThumbnailService;
+use Illuminate\Support\Facades\Date;
 
 class LandingController extends Controller
 {
@@ -95,10 +96,37 @@ class LandingController extends Controller
         return view('pages.landing.detail', compact('service', 'thumbnail', 'advantage_service', 'advantage_user', 'tagline'));
     }
     public function booking($id){
-        // Logic for explore page
+        $service = Service::where('id', $id)->first();
+
+        $user_buyer = Auth::user()->id;
+
+        if($service->users_id == $user_buyer){
+            toast()->warning(' Sorry, Members cannot book their own service.');
+
+            return back();
+        }
+
+        $order = new Order();
+        $order->buyer_id = $user_buyer;
+        $order->feelancer_id = $service->users_id;
+        $order->service_id = $service->id;
+        $order->order_status_id = 5;
+        $order->file = Null;
+        $order->note = Null;
+        $order->expired = Date('Y-m-d H:i:s', strtotime('+3 days'));
+        $order->order_status_id = 4;
+        $order->save();
+
+
+        $order_detail = Order::where('id', $order->id)->first();
+
+        return redirect()->route('detail.booking.landing', $order->id);
     }
     public function detail_booking($id){
-        // Logic for explore page
+
+        $order = Order::where('id', $id)->first();
+
+        return view('pages.landing.booking', compact('order'));
     }
 
 
