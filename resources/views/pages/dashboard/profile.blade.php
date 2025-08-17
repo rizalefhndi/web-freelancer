@@ -23,26 +23,44 @@
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-                        <form action="#" method="POST">
+                        <form action="{{ route('member.profile.update', [Auth::user->id()]) }}" method="POST" enctype="multipart/form-data">
+
+                            @method('PUT')
+                            @csrf
+
                             <div class="">
                                 <div class="px-4 py-5 sm:p-6">
                                     <div class="grid grid-cols-6 gap-6">
                                         <div class="col-span-6">
                                             <div class="flex items-center mt-1">
-                                                <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
-                                                    <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                                    </svg>
-                                                </span>
 
-                                                <button type="button" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                                @if (auth()->user()->detail_user()->first()->photo != null)
+                                                    <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="photo profile" class="rounded-full"">
+                                                @else
+                                                    <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
+                                                        <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                        </svg>
+                                                    </span>
+                                                @endif
+
+
+                                                <label for="choose" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                                                     Choose File
-                                                </button>
+                                                </label>
 
-                                                <button type="button" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-red-700 bg-transparent rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                                <input type="file" accept="image/*" name="photo" id="choose">
+
+                                                <a href="{{ route('member.delete.photo.profile') }}" type="button" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-red-700 bg-transparent rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" onclick="return confirm('Are you sure you want to delete your profile photo?')">
                                                     Delete
-                                                </button>
+                                                </a>
                                             </div>
+
+                                            @if ($error->has('photo'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('photo') }}</p>
+
+                                            @endif
+
                                         </div>
 
                                         <div class="md:col-span-6 lg:col-span-3">
