@@ -35,7 +35,7 @@
                                             <div class="flex items-center mt-1">
 
                                                 @if (auth()->user()->detail_user()->first()->photo != null)
-                                                    <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="photo profile" class="rounded-full"">
+                                                    <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt="photo profile" class="rounded-full w-16 h-16"">
                                                 @else
                                                     <span class="inline-block w-16 h-16 overflow-hidden bg-gray-100 rounded-full">
                                                         <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -143,11 +143,11 @@
                                     </div>
                                 </div>
                                 <div class="px-4 py-3 text-right sm:px-6">
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+                                    <a href="{{ route('member.dashboard.index') }}" type="button" class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300" onclick="return confirm('Are you sure want to cancel ?, Any changes you make will not be saved.')">
                                         Cancel
-                                    </button>
+                                    </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" onclick="return confirm('Are you sure want to submit this data ?')"">
                                         Save Changes
                                     </button>
                                 </div>
