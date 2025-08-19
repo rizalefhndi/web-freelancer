@@ -117,12 +117,12 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        $advantage_services = AdvantageService::where('service_id', $service->['id'])->get();
-        $taglines = Tagline::where('service_id', $service->['id'])->get();
-        $advantage_users = AdvantageUser::where('service_id', $service->['id'])->get();
-        $thumbnail_services = ThumbnailService::where('service_id', $service->['id'])->get();
+        $advantage_service = AdvantageService::where('service_id', $service['id'])->get();
+        $tagline = Tagline::where('service_id', $service['id'])->get();
+        $advantage_user = AdvantageUser::where('service_id', $service['id'])->get();
+        $thumbnail_service= ThumbnailService::where('service_id', $service['id'])->get();
 
-        return view('pages.dashboard.service.edit', compact('service', 'advantage_services', 'taglines', 'advantage_users', 'thumbnail_services'));
+        return view('pages.dashboard.service.edit', compact('service', 'advantage_service', 'tagline', 'advantage_user', 'thumbnail_service'));
     }
 
     /**
@@ -146,7 +146,7 @@ class ServiceController extends Controller
         if(isset($data['advantage_service'])) {
             foreach ($data['advantage-service'] as $key => $value) {
                 $advantage_service = AdvantageService::find($key);
-                $advantage_service->service_id = $service->['id'];
+                $advantage_service->service_id = $service['id'];
                 $advantage_service->advantage_id = $value;
                 $advantage_service->save();
             }
@@ -163,7 +163,7 @@ class ServiceController extends Controller
         if(isset($data['advantage_user'])) {
             foreach ($data['advantage-user'] as $key => $value) {
                 $advantage_user = AdvantageUser::find($key);
-                $advantage_user->service_id = $service->['id'];
+                $advantage_user->service_id = $service['id'];
                 $advantage_user->advantage = $value;
                 $advantage_user->save();
             }
@@ -180,7 +180,7 @@ class ServiceController extends Controller
         if(isset($data['tagline'])) {
             foreach ($data['tagline'] as $key => $value) {
                 $tagline = Tagline::find($key);
-                $tagline->service_id = $service->['id'];
+                $tagline->service_id = $service['id'];
                 $tagline->tagline = $value;
                 $tagline->save();
             }
