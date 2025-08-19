@@ -86,16 +86,16 @@ class ProfileController extends Controller
         $get_photo = DetailUser::where('users_id', Auth::user()->id)->first();
 
         if(isset($data_detail_user['photo'])) {
-            $data = 'storage'.$get_photo['photo'];
+            $data = 'storage/'.$get_photo['photo'];
             if(File::exists($data)) {
                 File::delete($data);
             } else {
-                File::delete('storage/app/'.$get_photo['photo']);
+                File::delete('storage/app/public/'.$get_photo['photo']);
             }
         }
 
         if(isset($data_detail_user['photo'])) {
-            $data_detail_user['photo'] = $request_detail_user->file('photo')->store('assets/profile', 'public');
+            $data_detail_user['photo'] = $request_detail_user->file('photo')->store('assets/photo', 'public');
 
         }
 
@@ -150,7 +150,7 @@ class ProfileController extends Controller
 
         // Second update value to null
         $data = DetailUser::find($get_user_photo['id']);
-        $data->photo = null;
+        $data->photo = NULL;
         $data->save();
 
         // Delete the photo from storage

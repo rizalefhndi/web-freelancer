@@ -34,7 +34,7 @@ class MemberController extends Controller
     public function index()
     {
 
-        $orders = Order::where('freelancer_id', Auth::user()->id))->get();
+        $orders = Order::where('freelancer_id', Auth::user()->id)->get();
 
         $progress = Order::where('freelancer_id', Auth::user()->id)
             ->where('order_status_id', 2) // Assuming 2 is the status for progress
