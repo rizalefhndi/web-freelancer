@@ -4,7 +4,7 @@
 
 @section('content')
 
-{{-- @if () --}}
+ @if (count($services))
     <main class="h-full overflow-y-auto">
 
         <div class="container mx-auto">
@@ -139,7 +139,7 @@
         </section>
 
     </main>
-{{-- @else
+ @else
 
             <div class="flex h-screen">
                 <div class="m-auto text-center">
@@ -160,7 +160,7 @@
                 </div>
             </div>
 
-@endif --}}
+@endif
 
 
 
