@@ -14,7 +14,7 @@
                         My Services
                     </h2>
                     <p class="text-sm text-gray-400">
-                        3 Total Services
+                        {{ auth()->user()->service()->count() }} Total Services
                     </p>
                 </div>
                 <div class="col-span-4 lg:text-right">
@@ -42,6 +42,50 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white">
+
+                                @forelse ($services as $key => $item)
+                                    <tr class="text-gray-700 border-b">
+                                        <td class="w-2/6 px-1 py-5">
+                                            <div class="flex items-center text-sm">
+                                                <div class="relative w-10 h-10 mr-3 rounded-full md:block">
+
+                                                    @if (isset($service->thumbnail_service[0]->thumbnail) != null)
+                                                        <img class="object-cover w-full h-full rounded" src="{{ url('') }}" alt="" loading="lazy" />
+
+
+                                                    @else
+
+                                                    @endif
+
+                                                    <img class="object-cover w-full h-full rounded" src="{{ url('https://randomuser.me/api/portraits/men/3.jpg') }}" alt="" loading="lazy" />
+                                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="font-medium text-black">
+                                                        Design WordPress <br>E-Commerce Modules
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-1 py-5 text-sm">
+                                            Website Developer
+                                        </td>
+                                        <td class="px-1 py-5 text-sm">
+                                            Rp120.000
+                                        </td>
+                                        <td class="px-1 py-5 text-sm text-green-500 text-md">
+                                            Active
+                                        </td>
+                                        <td class="px-1 py-5 text-sm">
+                                            <a href="{{ route('member.service.edit', 1) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-serv-email">
+                                                Edit Service
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                @empty
+
+                                @endforelse
                                 <tr class="text-gray-700 border-b">
                                     <td class="w-2/6 px-1 py-5">
                                         <div class="flex items-center text-sm">
