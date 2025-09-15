@@ -136,7 +136,7 @@ class ServiceController extends Controller
         $service->update($data);
 
         // Update advantage service
-        foreach ($data['advantage-service'] as $key => $value) {
+        foreach ($data['advantage-services'] as $key => $value) {
             $advantage_service = AdvantageService::find($key);
             $advantage_service->advantage = $value;
             $advantage_service->save();
@@ -153,7 +153,7 @@ class ServiceController extends Controller
         }
 
         // Update advantage user
-        foreach ($data['advantage-user'] as $key => $value) {
+        foreach ($data['advantage-users'] as $key => $value) {
             $advantage_user = AdvantageUser::find($key);
             $advantage_user->advantage = $value;
             $advantage_user->save();
@@ -170,7 +170,7 @@ class ServiceController extends Controller
         }
 
           // Update advantage tagline
-        foreach ($data['tagline'] as $key => $value) {
+        foreach ($data['taglines'] as $key => $value) {
             $tagline = Tagline::find($key);
             $tagline->tagline = $value;
             $tagline->save();

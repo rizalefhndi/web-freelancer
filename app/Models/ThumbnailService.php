@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ThumbnailService extends Model
 {
@@ -25,10 +25,9 @@ class ThumbnailService extends Model
         'updated_at',
         'created_at',
         'deleted_at',
-
     ];
 
-    // One to Many
+    // one to many
     public function service()
     {
         return $this->belongsTo('App/Models/Service', 'service_id', 'id');
