@@ -81,7 +81,7 @@ class ServiceController extends Controller
         if ($request->hasFile('thumbnail')) {
             foreach ($request->file('thumbnail') as $file) {
                 $path = $file->store(
-                    'assets/service/thumbnail' . 'public',
+                    'assets/service/thumbnail', 'public'
                 );
 
                 $thumbnail_service = new ThumbnailService();
