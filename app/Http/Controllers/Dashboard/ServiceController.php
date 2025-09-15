@@ -188,13 +188,14 @@ class ServiceController extends Controller
 
         // Update thumbnail service
         if ($request->hasFile('thumbnails')) {
-            foreach ($request->file('thumbnails') as $key => $value)
+            foreach ($request->file('thumbnails') as $key => $file)
                 {
                     $get_photo = ThumbnailService::where('id', $key)->first();
 
                     $path = $file->store(
-                        'assets/service/thumbnail' . 'public',
+                        'assets/service/thumbnail', 'public'
                     );
+
 
                     $thumbnail_service = ThumbnailService::find($key);
                     $thumbnail_service->thumbnail = $path;
@@ -214,7 +215,7 @@ class ServiceController extends Controller
             foreach ($request->file('thumbnail') as $file)
                 {
                     $path = $file->store(
-                        'assets/service/thumbnail' . 'public',
+                        'assets/service/thumbnail', 'public'
                     );
 
                     $thumbnail_service = new ThumbnailService();
