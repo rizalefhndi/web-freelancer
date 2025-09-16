@@ -108,7 +108,7 @@ class LandingController extends Controller
 
         $order = new Order();
         $order->buyer_id = $user_buyer;
-        $order->feelancer_id = $service->users_id;
+        $order->freelancer_id = $service->user->id;
         $order->service_id = $service->id;
         $order->order_status_id = 5;
         $order->file = Null;
@@ -116,7 +116,6 @@ class LandingController extends Controller
         $order->expired = Date('Y-m-d H:i:s', strtotime('+3 days'));
         $order->order_status_id = 4;
         $order->save();
-
 
         $order_detail = Order::where('id', $order->id)->first();
 

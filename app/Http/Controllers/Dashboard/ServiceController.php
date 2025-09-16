@@ -143,9 +143,9 @@ class ServiceController extends Controller
         }
 
         // Add new advantage service
-        if(isset($data['advantage_service'])) {
+        if(isset($data['advantage-service'])) {
             foreach ($data['advantage-service'] as $key => $value) {
-                $advantage_service = AdvantageService::find($key);
+                $advantage_service = New AdvantageService;
                 $advantage_service->service_id = $service['id'];
                 $advantage_service->advantage_id = $value;
                 $advantage_service->save();
@@ -160,9 +160,9 @@ class ServiceController extends Controller
         }
 
         // Add new advantage user
-        if(isset($data['advantage_user'])) {
+        if(isset($data['advantage-user'])) {
             foreach ($data['advantage-user'] as $key => $value) {
-                $advantage_user = AdvantageUser::find($key);
+                $advantage_user = New AdvantageUser;
                 $advantage_user->service_id = $service['id'];
                 $advantage_user->advantage = $value;
                 $advantage_user->save();
@@ -179,7 +179,7 @@ class ServiceController extends Controller
         // Add new advantage tagline
         if(isset($data['tagline'])) {
             foreach ($data['tagline'] as $key => $value) {
-                $tagline = Tagline::find($key);
+                $tagline = New Tagline;
                 $tagline->service_id = $service['id'];
                 $tagline->tagline = $value;
                 $tagline->save();
