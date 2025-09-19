@@ -17,14 +17,14 @@
                     Finish Your Project With <br class="lg:block hidden">
                     Ours Best Freelancers
                 </h1>
-                <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 ">
+                <p class="text-lg leading-relaxed text-collabio-text font-light tracking-wide mb-10 lg:mb-18 ">
                     Find thousands of remote workers who have the best <br class="lg:block hidden">
                     skills and experience to help you accomplishing <br class="lg:block hidden">
                     your projects.
                 </p>
                 <div
                     class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
-                    <button class="bg-serv-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
+                    <button class="bg-collabio-button text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
                         Get Started
                     </button>
                 </div>
@@ -57,7 +57,7 @@
     {{-- Content --}}
     <div class="content">
             <!-- services -->
-            <div class="bg-serv-services-bg overflow-hidden">
+            <div class="bg-collabio-services-bg overflow-hidden">
                 <div class="pt-16 pb-16 lg:pb-20 lg:pl-24 md:pl-16 sm:pl-8 pl-8 mx-auto">
                     <div class="flex flex-col w-full">
                         <h2 class="sm:text-2xl text-xl tracking-wider font-semibold mb-5 text-medium-black">
@@ -86,14 +86,14 @@
                         Increase Productivity. <br>
                         Save Your Time & Budget.
                     </h2>
-                    <p class="text-lg leading-relaxed text-serv-text font-light mb-10 lg:mb-18">
+                    <p class="text-lg leading-relaxed text-collabio-text font-light mb-10 lg:mb-18">
                         Find thousands of skilled and experienced <br class="lg:block hidden">
                         remote workers to help you accomplishing <br class="lg:block hidden">
                         your projects.
                     </p>
                     <a
                         href="explore.php"
-                        class="bg-serv-button px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
+                        class="bg-collabio-button px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
                         Learn More
                     </a>
                 </div>

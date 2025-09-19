@@ -1,6 +1,6 @@
 <!-- Desktop sidebar -->
 <aside class="z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-white md:block" aria-label="aside">
-    <div class="text-serv-bg">
+    <div class="text-collabio-bg">
 
         <div class="" href="#">
             <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
@@ -13,7 +13,7 @@
             <div>
                 <!--Author name-->
                 <p class="font-semibold text-gray-900 text-md">{{ Auth::user()->name }}</p>
-                <p class="text-sm font-light text-serv-text">
+                <p class="text-sm font-light text-collabio-text">
                     Website Developer
                 </p>
             </div>
@@ -29,7 +29,7 @@
                     request()->is('member/*/dashboard/*')
                 )
 
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-collabio-bg" aria-hidden="true"></span>
 
                 @endif
 
@@ -53,7 +53,7 @@
                     request()->is('member/*/service/*')
                 )
 
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-collabio-bg" aria-hidden="true"></span>
 
                 @endif
 
@@ -72,7 +72,7 @@
                         <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
                     </svg> -->
                     <span class="ml-4">My Services</span>
-                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">2</span>
+                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-collabio-green-badge">2</span>
 
                 </a>
             </li>
@@ -86,7 +86,7 @@
                     request()->is('member/*/request/*')
                 )
 
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-collabio-bg" aria-hidden="true"></span>
 
                 @endif
 
@@ -103,7 +103,7 @@
                         <rect x="17" y="11" width="2" height="10" rx="1" transform="rotate(90 17 11)" fill="white" />
                     </svg> -->
                     <span class="ml-4">My Request</span>
-                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">3</span>
+                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-collabio-green-badge">3</span>
 
                 </a>
             </li>
@@ -117,7 +117,7 @@
                     request()->is('member/*/order/*')
                 )
 
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-collabio-bg" aria-hidden="true"></span>
 
                 @endif
 
@@ -136,7 +136,7 @@
                         <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                     </svg> -->
                     <span class="ml-4">My Orders</span>
-                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">10</span>
+                    <span class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-collabio-green-badge">10</span>
 
                 </a>
             </li>
@@ -150,7 +150,7 @@
                     request()->is('member/*/profile/*')
                 )
 
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg" aria-hidden="true"></span>
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-collabio-bg" aria-hidden="true"></span>
 
                 @endif
 

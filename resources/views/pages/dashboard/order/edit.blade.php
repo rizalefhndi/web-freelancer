@@ -97,7 +97,7 @@
                             @method('PUT')
                             @csrf
 
-                            <div class="flex p-8 border border-gray-200 rounded-lg bg-serv-upload-bg h-128">
+                            <div class="flex p-8 border border-gray-200 rounded-lg bg-collabio-upload-bg h-128">
                                 <div class="m-auto text-center">
                                     <img src="{{ asset('/assets/images/services-file-icon.svg') }}" alt="" class="w-20 mx-auto">
                                     <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
@@ -113,12 +113,12 @@
 
                                     <div class="relative mt-0 md:mt-6">
                                         @if(isset($order->file))
-                                            <a href="{{ url(Storage::url($order->file ?? '')) }}" class="px-4 py-2 mt-2 text-left text-gray-700 rounded-xl bg-serv-hr" onclick="return confirm('Are you sure want to download this file?')">
+                                            <a href="{{ url(Storage::url($order->file ?? '')) }}" class="px-4 py-2 mt-2 text-left text-gray-700 rounded-xl bg-collabio-hr" onclick="return confirm('Are you sure want to download this file?')">
                                                 Download File
                                             </a>
                                         @else
                                             <input type="file" accept=".zip" id="choose" name="file" hidden required>
-                                            <label for="choose" class="px-4 py-2 mt-2 text-left text-gray-700 rounded-xl bg-serv-hr">
+                                            <label for="choose" class="px-4 py-2 mt-2 text-left text-gray-700 rounded-xl bg-collabio-hr">
                                                 Choose File
                                             </label>
                                         @endif

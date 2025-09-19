@@ -70,18 +70,18 @@
 
             <h1 class="text-3xl font-bold mb-4">Successful Booking</h1>
 
-            <p class="leading-8 text-serv-text mb-6">
+            <p class="leading-8 text-collabio-text mb-6">
                 To continue payment, please contact directly <br class="lg:block hidden">
                 our Freelancer through WhatsApp
             </p>
 
-            <a href="http://wa.me/628123456789" class="bg-serv-button text-white text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
+            <a href="http://wa.me/628123456789" class="bg-collabio-button text-white text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
                 Continue to Chat
             </a>
 
             <br>
 
-            <a href="{{ route('index') }}" class="bg-serv-services-bg text-serv-bg text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
+            <a href="{{ route('index') }}" class="bg-collabio-services-bg text-collabio-bg text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
                 Back to Home
             </a>
 

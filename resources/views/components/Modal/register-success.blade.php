@@ -13,17 +13,17 @@
                 Account Created
             </h3>
             <p class="text-gray-400 mt-1 text-sm">
-                Explore Serv and start your real project
+                Explore Collabio and start your real project
             </p>
         </div>
         <form action="index.php" method="GET">
             <!--footer-->
             <div class="px-6 pb-6 rounded-b-xl mx-10">
                 <input type="hidden" name="auth" value="true">
-                <a href="explore.php?auth" class="block text-center bg-serv-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">
+                <a href="explore.php?auth" class="block text-center bg-collabio-button text-white text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">
                     Find Services
                 </a>
-                <a href="dashboard/index.php" class="block text-center text-serv-text text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">
+                <a href="dashboard/index.php" class="block text-center text-collabio-text text-lg py-3 px-12 my-2 rounded-lg w-full" type="submit">
                     My Dashboard
                 </a>
             </div>

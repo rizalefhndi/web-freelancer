@@ -47,7 +47,7 @@
                         <section class="pt-6 pb-20 mx-8 w-auth">
                             <div class="grid gap-5 md:grid-cols-12">
                                 <main class="p-4 lg:col-span-7 md:col-span-12">
-                                    <span class="inline-flex items-center justify-center px-3 py-2 mb-4 mr-2 text-xs leading-none text-green-500 rounded-full bg-serv-green-badge">Active</span>
+                                    <span class="inline-flex items-center justify-center px-3 py-2 mb-4 mr-2 text-xs leading-none text-green-500 rounded-full bg-collabio-green-badge">Active</span>
 
                                     <!-- details heading -->
                                     <div class="details-heading">
@@ -62,7 +62,7 @@
                                             <div class="flex mt-2 flex-nowrap">
 
                                                 @forelse ($thumbnail as $item)
-                                                    <img :class="{ 'border-4 border-serv-button': active === {{ $item->id }} }" @click="changeThumbnail('{{ url(Storage::url($item->thumbnail)) }}', {{ $item->id }})" src="{{ url(Storage::url($item->thumbnail)) }}" alt="thumbnail service" class="inline-block w-24 mr-2 rounded-lg cursor-pointer">
+                                                    <img :class="{ 'border-4 border-collabio-button': active === {{ $item->id }} }" @click="changeThumbnail('{{ url(Storage::url($item->thumbnail)) }}', {{ $item->id }})" src="{{ url(Storage::url($item->thumbnail)) }}" alt="thumbnail service" class="inline-block w-24 mr-2 rounded-lg cursor-pointer">
                                                 @empty
                                                     {{-- empty --}}
                                                 @endforelse
@@ -74,7 +74,7 @@
                                         <div>
                                             <!-- The tabs content -->
                                             <div class="leading-8 text-md">
-                                                <h2 class="text-xl font-semibold">About This <span class="text-serv-button">Services</span></h2>
+                                                <h2 class="text-xl font-semibold">About This <span class="text-collabio-button">Services</span></h2>
                                                 <div class="mt-4 mb-8 content-description">
                                                     <p>
                                                         {{ $order->service->description ?? '' }}
@@ -99,8 +99,8 @@
                                     </div>
                                 </main>
                                 <aside class="p-4 lg:col-span-5 md:col-span-12 md:pt-0">
-                                    <div class="mb-4 border rounded-lg border-serv-testimonial-border">
-                                        <div class="flex items-center px-2 py-3 mx-4 mt-4 border rounded-full border-serv-testimonial-border">
+                                    <div class="mb-4 border rounded-lg border-collabio-testimonial-border">
+                                        <div class="flex items-center px-2 py-3 mx-4 mt-4 border rounded-full border-collabio-testimonial-border">
                                             <div class="flex-1 text-sm font-medium text-center">
                                                 <svg class="inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="12" cy="12" r="8" stroke="#082431" stroke-width="1.5" />
@@ -131,10 +131,10 @@
                                         <div class="px-4">
                                             <table class="w-full mb-4">
                                                 <tr>
-                                                    <td class="text-sm leading-7 text-serv-text">
+                                                    <td class="text-sm leading-7 text-collabio-text">
                                                         Price starts from:
                                                     </td>
-                                                    <td class="mb-4 text-xl font-semibold text-right text-serv-button">
+                                                    <td class="mb-4 text-xl font-semibold text-right text-collabio-button">
                                                         {{ 'Rp '.number_format($order->service->price) ?? '' }}
                                                     </td>
                                                 </tr>
@@ -157,7 +157,7 @@
                                         See Reviews
                                     </a>
 
-                                    <a href="{{ route('member.service.edit', $order->service_id) }}" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-lg shadow-sm bg-serv-email hover:bg-serv-email-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-serv-email">
+                                    <a href="{{ route('member.service.edit', $order->service_id) }}" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-lg shadow-sm bg-collabio-email hover:bg-collabio-email-text focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-collabio-email">
                                         Edit Service
                                     </a>
                                 </div>

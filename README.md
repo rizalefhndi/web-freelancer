@@ -17,8 +17,8 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/kan.git
-   cd kan
+   git clone https://github.com/your-username/collabio.git
+   cd collabio
    ```
 
 2. **Install Composer dependencies:**
@@ -47,7 +47,7 @@ Follow these steps to set up the project locally:
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=kan
+   DB_DATABASE=collabio
    DB_USERNAME=root
    DB_PASSWORD=
    ```

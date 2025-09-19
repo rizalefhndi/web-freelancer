@@ -7,7 +7,7 @@
             <div>
                 <!--Author name-->
                 <p class="text-gray-900 font-semibold text-lg">Alex Jones</p>
-                <p class="text-serv-text font-light text-md">
+                <p class="text-collabio-text font-light text-md">
                     Website Developer
                 </p>
             </div>
@@ -29,11 +29,11 @@
 
         <div class="text-center mt-5 flex justify-between w-full">
             <span
-                class="text-serv-text mr-3 inline-flex items-center leading-none text-md py-1 ">
+                class="text-collabio-text mr-3 inline-flex items-center leading-none text-md py-1 ">
                 Price starts from:
             </span>
             <span
-                class="text-serv-button inline-flex items-center leading-none text-md font-semibold">
+                class="text-collabio-button inline-flex items-center leading-none text-md font-semibold">
                 Rp 120.000
             </span>
         </div>

@@ -4,7 +4,7 @@
 
         @include('includes.dashboard.meta')
 
-        <title>@yield('title') | SERV</title>
+        <title>@yield('title') | Collabio</title>
 
         @stack('before-style')
 
@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="antialiased">
-            <div class="flex h-screen bg-serv-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }">
+            <div class="flex h-screen bg-collabio-services-bg" :class="{ 'overflow-hidden': isSideMenuOpen }">
 
             @include('components.dashboard.dekstop')
 

@@ -37,42 +37,42 @@
                 <div class="flex overflow-x-scroll hide-scroll-bar dragscroll">
                      <div class="flex mt-2 flex-nowrap">
                         {{-- Gambar 1: Developer coding --}}
-                        <img :class="{'border-4 border-serv-button': active === 1}"
+                        <img :class="{'border-4 border-collabio-button': active === 1}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&h=900&fit=crop') }}',1)"
                              src="{{ asset('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=250&h=160&fit=crop') }}"
                              alt="Developer coding"
                              class="inline-block mr-2 rounded-lg cursor-pointer w-36">
 
                         {{-- Gambar 2: Web development workspace --}}
-                        <img :class="{'border-4 border-serv-button': active === 2}"
+                        <img :class="{'border-4 border-collabio-button': active === 2}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&h=900&fit=crop') }}',2)"
                              src="{{ asset('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=250&h=160&fit=crop') }}"
                              alt="Web development workspace"
                              class="inline-block mr-2 rounded-lg cursor-pointer w-36">
 
                         {{-- Gambar 3: Programming code on screen --}}
-                        <img :class="{'border-4 border-serv-button': active === 3}"
+                        <img :class="{'border-4 border-collabio-button': active === 3}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&h=900&fit=crop') }}',3)"
                              src="{{ asset('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=250&h=160&fit=crop') }}"
                              alt="Programming code on screen"
                              class="inline-block mr-2 rounded-lg cursor-pointer w-36">
 
                         {{-- Gambar 4: Code editor --}}
-                        <img :class="{'border-4 border-serv-button': active === 4}"
+                        <img :class="{'border-4 border-collabio-button': active === 4}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1600&h=900&fit=crop') }}',4)"
                              src="{{ asset('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=250&h=160&fit=crop') }}"
                              alt="Code editor"
                              class="inline-block mr-2 rounded-lg cursor-pointer w-36">
 
                         {{-- Gambar 5: Team coding --}}
-                        <img :class="{'border-4 border-serv-button': active === 5}"
+                        <img :class="{'border-4 border-collabio-button': active === 5}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=900&fit=crop') }}',5)"
                              src="{{ asset('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=250&h=160&fit=crop') }}"
                              alt="Team coding"
                              class="inline-block mr-2 rounded-lg cursor-pointer w-36">
 
                         {{-- Gambar 6: Code on laptop --}}
-                        <img :class="{'border-4 border-serv-button': active === 6}"
+                        <img :class="{'border-4 border-collabio-button': active === 6}"
                              @click="changeThumbnail('{{ asset('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&h=900&fit=crop') }}',6)"
                              src="{{ asset('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=250&h=160&fit=crop') }}"
                              alt="Code on laptop"
@@ -84,14 +84,14 @@
                 <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'description' }" id="tab_wrapper">
                     <!-- The tabs navigation -->
                     <nav class="my-8" aria-label="navigation">
-                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-serv-bg text-white': tab === 'description','bg-serv-services-bg text-serv-bg' : tab !== 'description' }" @click.prevent="tab = 'description'; window.location.hash = 'description'" href="#">Description</a>
-                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-serv-bg text-white': tab === 'seller' ,'bg-serv-services-bg text-serv-bg' : tab !== 'seller' }" @click.prevent="tab = 'seller'; window.location.hash = 'seller'" href="#">About The Seller</a>
-                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-serv-bg text-white': tab === 'reviews' ,'bg-serv-services-bg text-serv-bg' : tab !== 'reviews' }" @click.prevent="tab = 'reviews'; window.location.hash = 'reviews'" href="#">Reviews</a>
+                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-collabio-bg text-white': tab === 'description','bg-collabio-services-bg text-collabio-bg' : tab !== 'description' }" @click.prevent="tab = 'description'; window.location.hash = 'description'" href="#">Description</a>
+                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-collabio-bg text-white': tab === 'seller' ,'bg-collabio-services-bg text-collabio-bg' : tab !== 'seller' }" @click.prevent="tab = 'seller'; window.location.hash = 'seller'" href="#">About The Seller</a>
+                        <a class="inline-block px-8 py-2 my-2 mr-2 font-medium rounded-xl" :class="{ 'bg-collabio-bg text-white': tab === 'reviews' ,'bg-collabio-services-bg text-collabio-bg' : tab !== 'reviews' }" @click.prevent="tab = 'reviews'; window.location.hash = 'reviews'" href="#">Reviews</a>
                     </nav>
 
                     <!-- The tabs content -->
                     <div x-show.transition.duration.500ms="tab === 'description'" class="leading-8 text-md">
-                        <h2 class="text-xl font-semibold">About This <span class="text-serv-button">Services</span></h2>
+                        <h2 class="text-xl font-semibold">About This <span class="text-collabio-button">Services</span></h2>
                         <div class="mt-4 mb-8 content-description">
                             <p>
                                 I will design wordpress ecommerce modules, professional website for you using WordPress! With this Services
@@ -112,7 +112,7 @@
                         </p>
                     </div>
                     <div x-show.transition.duration.500ms="tab === 'seller'" class="leading-8 text-md">
-                        <h2 class="mb-4 text-xl font-semibold">About <span class="text-serv-button">Me</span></h2>
+                        <h2 class="mb-4 text-xl font-semibold">About <span class="text-collabio-button">Me</span></h2>
                         <div class="grid md:grid-cols-12">
                             <div class="flex items-center col-span-12 p-2 lg:col-span-6">
                                 <div class="flex items-center space-x-4">
@@ -151,16 +151,16 @@
                         </ul>
                         <h3 class="my-4 text-lg font-semibold">Skills</h3>
                         <div class="mb-8 skills">
-                            <span class="inline-block px-3 py-1 mr-2 rounded bg-serv-services-bg">Web Development</span>
-                            <span class="inline-block px-3 py-1 mr-2 rounded bg-serv-services-bg">Web Design</span>
+                            <span class="inline-block px-3 py-1 mr-2 rounded bg-collabio-services-bg">Web Development</span>
+                            <span class="inline-block px-3 py-1 mr-2 rounded bg-collabio-services-bg">Web Design</span>
                         </div>
-                        <hr class="border-serv-services-bg">
+                        <hr class="border-collabio-services-bg">
                         <p class="my-4 text-lg text-gray-400">
                             Joined Since 20 April 2021
                         </p>
                     </div>
                     <div x-show.transition.duration.500ms="tab === 'reviews'">
-                        <h2 class="mb-4 text-xl font-semibold"><span class="text-serv-button">210</span> Happy Clients</h2>
+                        <h2 class="mb-4 text-xl font-semibold"><span class="text-collabio-button">210</span> Happy Clients</h2>
 
                         @include('components.landing.review')
                         @include('components.landing.review')
@@ -171,20 +171,20 @@
             </div>
         </main>
         <aside class="p-4 lg:col-span-4 md:col-span-12 md:pt-0">
-            <div class="mb-4 border rounded-lg border-serv-testimonial-border">
+            <div class="mb-4 border rounded-lg border-collabio-testimonial-border">
                 <!--horizantil margin is just for display-->
                 <div class="flex items-start px-4 pt-6">
                     <img class="object-cover w-16 h-16 mr-4 rounded-full" src="{{ url('https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60') }}" alt="avatar">
                     <div class="w-full">
                         <div class="flex items-center justify-between">
-                            <h2 class="my-1 text-xl font-medium text-serv-bg">Farzhan Pill</h2>
+                            <h2 class="my-1 text-xl font-medium text-collabio-bg">Farzhan Pill</h2>
                         </div>
-                        <p class="text-md text-serv-text">
+                        <p class="text-md text-collabio-text">
                             Website Developer
                         </p>
                     </div>
                 </div>
-                <div class="flex items-center px-2 py-3 mx-4 mt-4 border rounded-full border-serv-testimonial-border">
+                <div class="flex items-center px-2 py-3 mx-4 mt-4 border rounded-full border-collabio-testimonial-border">
                     <div class="flex-1 text-sm font-medium text-center">
                         <svg class="inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="8" stroke="#082431" stroke-width="1.5" />
@@ -215,10 +215,10 @@
                 <div class="px-4">
                     <table class="w-full mb-4">
                         <tr>
-                            <td class="text-sm leading-7 text-serv-text">
+                            <td class="text-sm leading-7 text-collabio-text">
                                 Price starts from:
                             </td>
-                            <td class="mb-4 text-xl font-semibold text-right text-serv-button">
+                            <td class="mb-4 text-xl font-semibold text-right text-collabio-button">
                                 Rp120.000
                             </td>
                         </tr>
@@ -226,7 +226,7 @@
                     </table>
                 </div>
                 <div class="px-4 pb-4 booking">
-                    <a href="#" class="block px-12 py-4 my-2 text-lg font-semibold text-center text-white bg-serv-button rounded-xl">
+                    <a href="#" class="block px-12 py-4 my-2 text-lg font-semibold text-center text-white bg-collabio-button rounded-xl">
                         Booking Now
                     </a>
                 </div>

@@ -1210,23 +1210,23 @@ select{
 .border-b{
 	border-bottom-width: 1px;
 }
-.border-serv-hr{
+.border-collabio-hr{
 	--tw-border-opacity: 1;
 	border-color: rgba(239, 239, 239, var(--tw-border-opacity));
 }
-.border-serv-button{
+.border-collabio-button{
 	--tw-border-opacity: 1;
 	border-color: rgba(34, 176, 125, var(--tw-border-opacity));
 }
-.border-serv-services-bg{
+.border-collabio-services-bg{
 	--tw-border-opacity: 1;
 	border-color: rgba(244, 244, 250, var(--tw-border-opacity));
 }
-.border-serv-testimonial-border{
+.border-collabio-testimonial-border{
 	--tw-border-opacity: 1;
 	border-color: rgba(236, 236, 244, var(--tw-border-opacity));
 }
-.border-serv-border{
+.border-collabio-border{
 	--tw-border-opacity: 1;
 	border-color: rgba(22, 48, 61, var(--tw-border-opacity));
 }
@@ -1241,7 +1241,7 @@ select{
 .border-transparent{
 	border-color: transparent;
 }
-.border-serv-text{
+.border-collabio-text{
 	--tw-border-opacity: 1;
 	border-color: rgba(162, 173, 177, var(--tw-border-opacity));
 }
@@ -1257,23 +1257,23 @@ select{
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
-.bg-serv-bg{
+.bg-collabio-bg{
 	--tw-bg-opacity: 1;
 	background-color: rgba(8, 36, 49, var(--tw-bg-opacity));
 }
-.bg-serv-services-bg{
+.bg-collabio-services-bg{
 	--tw-bg-opacity: 1;
 	background-color: rgba(244, 244, 250, var(--tw-bg-opacity));
 }
-.bg-serv-button{
+.bg-collabio-button{
 	--tw-bg-opacity: 1;
 	background-color: rgba(34, 176, 125, var(--tw-bg-opacity));
 }
-.bg-serv-bg-explore{
+.bg-collabio-bg-explore{
 	--tw-bg-opacity: 1;
 	background-color: rgba(248, 248, 253, var(--tw-bg-opacity));
 }
-.bg-serv-explore-button{
+.bg-collabio-explore-button{
 	--tw-bg-opacity: 1;
 	background-color: rgba(240, 240, 252, var(--tw-bg-opacity));
 }
@@ -1281,11 +1281,11 @@ select{
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
-.bg-serv-green-badge{
+.bg-collabio-green-badge{
 	--tw-bg-opacity: 1;
 	background-color: rgba(221, 255, 243, var(--tw-bg-opacity));
 }
-.bg-serv-email{
+.bg-collabio-email{
 	--tw-bg-opacity: 1;
 	background-color: rgba(11, 45, 61, var(--tw-bg-opacity));
 }
@@ -1304,11 +1304,11 @@ select{
 	--tw-bg-opacity: 1;
 	background-color: rgba(5, 150, 105, var(--tw-bg-opacity));
 }
-.bg-serv-upload-bg{
+.bg-collabio-upload-bg{
 	--tw-bg-opacity: 1;
 	background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
 }
-.bg-serv-hr{
+.bg-collabio-hr{
 	--tw-bg-opacity: 1;
 	background-color: rgba(239, 239, 239, var(--tw-bg-opacity));
 }
@@ -1566,11 +1566,11 @@ select{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-.text-serv-bg{
+.text-collabio-bg{
 	--tw-text-opacity: 1;
 	color: rgba(8, 36, 49, var(--tw-text-opacity));
 }
-.text-serv-button{
+.text-collabio-button{
 	--tw-text-opacity: 1;
 	color: rgba(34, 176, 125, var(--tw-text-opacity));
 }
@@ -1578,7 +1578,7 @@ select{
 	--tw-text-opacity: 1;
 	color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
-.text-serv-text{
+.text-collabio-text{
 	--tw-text-opacity: 1;
 	color: rgba(162, 173, 177, var(--tw-text-opacity));
 }
@@ -1590,7 +1590,7 @@ select{
 	--tw-text-opacity: 1;
 	color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
-.text-serv-yellow{
+.text-collabio-yellow{
 	--tw-text-opacity: 1;
 	color: rgba(255, 191, 71, var(--tw-text-opacity));
 }
@@ -1630,7 +1630,7 @@ select{
 	--tw-text-opacity: 1;
 	color: rgba(245, 158, 11, var(--tw-text-opacity));
 }
-.text-serv-login-text{
+.text-collabio-login-text{
 	--tw-text-opacity: 1;
 	color: rgba(92, 92, 105, var(--tw-text-opacity));
 }
@@ -1638,15 +1638,15 @@ select{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.placeholder-serv-text::-moz-placeholder{
+.placeholder-collabio-text::-moz-placeholder{
 	--tw-placeholder-opacity: 1;
 	color: rgba(162, 173, 177, var(--tw-placeholder-opacity));
 }
-.placeholder-serv-text:-ms-input-placeholder{
+.placeholder-collabio-text:-ms-input-placeholder{
 	--tw-placeholder-opacity: 1;
 	color: rgba(162, 173, 177, var(--tw-placeholder-opacity));
 }
-.placeholder-serv-text::placeholder{
+.placeholder-collabio-text::placeholder{
 	--tw-placeholder-opacity: 1;
 	color: rgba(162, 173, 177, var(--tw-placeholder-opacity));
 }
@@ -1795,7 +1795,7 @@ body {
 	--tw-bg-opacity: 1;
 	background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
 }
-.hover\:bg-serv-email-text:hover{
+.hover\:bg-collabio-email-text:hover{
 	--tw-bg-opacity: 1;
 	background-color: rgba(83, 113, 128, var(--tw-bg-opacity));
 }
@@ -1852,7 +1852,7 @@ body {
 	--tw-ring-opacity: 1;
 	--tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
 }
-.focus\:ring-serv-email:focus{
+.focus\:ring-collabio-email:focus{
 	--tw-ring-opacity: 1;
 	--tw-ring-color: rgba(11, 45, 61, var(--tw-ring-opacity));
 }
@@ -2154,7 +2154,7 @@ body {
 		margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
 		margin-bottom: calc(0px * var(--tw-space-y-reverse));
 	}
-	.lg\:bg-serv-services-bg{
+	.lg\:bg-collabio-services-bg{
 		--tw-bg-opacity: 1;
 		background-color: rgba(244, 244, 250, var(--tw-bg-opacity));
 	}

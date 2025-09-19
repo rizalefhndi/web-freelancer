@@ -4,7 +4,7 @@
 
     @include('includes.landing.meta')
 
-    <title>@yield('title') | SERV</title>
+    <title>@yield('title') | Collabio</title>
 
     @stack('before-style')
 
