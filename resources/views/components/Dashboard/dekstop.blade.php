@@ -3,7 +3,7 @@
     <div class="text-collabio-bg">
 
         <div class="" href="#">
-            <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
+            <img src="{{ asset('/assets/images/logo collabio.png') }}" alt="" class="object-center mx-auto my-8 ">
         </div>
 
         <div class="flex items-center pt-8 pl-5 space-x-2 border-t border-gray-100">
