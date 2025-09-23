@@ -33,7 +33,12 @@
                     </a>
                 </nav>
                 <div class="grid grid-cols lg:grid-cols-3 md:grid-cols-2 gap-4">
-                    @include('components.landing.service-explorer')
+                    @forelse ($services as $item)
+                        @include('components.landing.service-explorer')
+                    @empty
+
+                    @endforelse
+
                 </div>
                 <div class="text-center mt-10">
                     <a class="bg-collabio-explore-button text-collabio-bg block sm:inline-block my-2 py-2 px-8 mx-4 font-medium rounded-xl" href="#">
