@@ -208,7 +208,7 @@
                 </div>
                 <div class="px-4 pb-4 booking">
                     @auth
-                        <a href="{{ route('booking.landing') }}" class="block px-12 py-4 my-2 text-lg font-semibold text-center text-white bg-collabio-button rounded-xl">
+                        <a href="{{ route('booking.landing', $service->id) }}" class="block px-12 py-4 my-2 text-lg font-semibold text-center text-white bg-collabio-button rounded-xl">
                             Booking Now
                         </a>
                     @endauth
