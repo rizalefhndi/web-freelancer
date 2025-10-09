@@ -31,6 +31,6 @@ class AdvantageService extends Model
     // One to Many
     public function service()
     {
-        return $this->belongsTo('App/Models/Service', 'service_id', 'id');
+        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
     }
 }

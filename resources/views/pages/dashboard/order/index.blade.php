@@ -42,7 +42,7 @@
                                             <div class="flex items-center text-sm">
                                                 <div class="relative w-10 h-10 mr-3 rounded-full md:block">
 
-                                                    @if ($order->user_buyer->detail_user->photo != NULL)
+                                                    @if ($order->user_buyer && $order->user_buyer->detail_user && $order->user_buyer->detail_user->photo != NULL)
                                                         <img class="object-cover w-full h-full rounded-full" src="{{ url(Storage::url($order->user_buyer->detail_user->photo)) }}" alt="photo freelancer" loading="lazy" />
                                                     @else
                                                         <svg class="object-cover w-full h-full rounded text-gray-300" fill="currentColor" viewBox="0 0 24 24">
