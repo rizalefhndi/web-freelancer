@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\Dashboard\Service\UpdateMyOrderRequest;
+use App\Http\Requests\Dashboard\MyOrder\UpdateMyOrderRequest;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -91,14 +91,17 @@ class MyOrderController extends Controller
 
         if(isset($data['file'])){
             $data['file'] = $request->file('file')->store(
-                'assets/order/attachment' . 'public',
+                'assets/order/attachment',
+                'public'
             );
         }
-
         $order = Order::find($order['id']);
         $order->file = $data['file'];
         $order->note = $data['note'];
         $order->save();
+
+        dd($order->file);
+
 
         toast()->success('Submit order has been success');
 
