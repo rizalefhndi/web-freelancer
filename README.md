@@ -52,6 +52,8 @@ Follow these steps to set up the project locally:
    DB_PASSWORD=
    ```
 
+Confugure to database
+
 7. **Run database migrations and seeders:**
    ```bash
    php artisan migrate --seed
