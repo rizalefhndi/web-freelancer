@@ -1,4 +1,4 @@
-# Kan - Freelancer Marketplace
+# Collabio - Freelancer Marketplace
 
 Collabio is a web application built with Laravel that serves as a marketplace for freelancers and clients to connect. Clients can post projects, and freelancers can offer their services.
 
