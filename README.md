@@ -1,4 +1,4 @@
-# Collabio - Freelancer Marketplace
+# Kan - Freelancer Marketplace
 
 Collabio is a web application built with Laravel that serves as a marketplace for freelancers and clients to connect. Clients can post projects, and freelancers can offer their services.
 
@@ -25,8 +25,8 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/collabio.git
-   cd collabio
+   git clone https://github.com/rizalefhndi/web-freelancer
+   cd web-freelancer
    ```
 
 2. **Install Composer dependencies:**
@@ -55,10 +55,12 @@ Follow these steps to set up the project locally:
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=collabio
+   DB_DATABASE=web-freelancer
    DB_USERNAME=root
    DB_PASSWORD=
    ```
+
+Confugure to database
 
 7. **Run database migrations and seeders:**
    ```bash
