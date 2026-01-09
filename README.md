@@ -93,3 +93,6 @@ Thank you for considering contributing to the Kan project! Please feel free to c
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+Enjoy coding
